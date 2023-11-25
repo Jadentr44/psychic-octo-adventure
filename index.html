@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body class="">
+    <div class="">
+      <main>
+        <h1 class="text-4xl text-center">Grocery List</h1>
+        <!-- input -->
+        <div
+          class="border-2 border-black flex md:w-3/5 w-4/5 max-w-2xl mt-12 mx-auto text-xl"
+        >
+          <input
+            id="itemInput"
+            class="w-full py-2 pl-2 outline-0"
+            placeholder="Item"
+            type="text"
+          />
+          <button
+            id="addBtn"
+            class="min-w-fit px-4 bg-green-600 hover:bg-green-700 text-white"
+          >
+            Add Item
+          </button>
+        </div>
+
+        <!-- list -->
+        <div class="max-w-2xl mx-auto mt-6">
+          <div class="flex justify-between px-4 border-b-4 border-black">
+            <h2><span id="count"></span> of <span id="countTotal"></span></h2>
+            <h2>Total:$ <span id="listTotal"></span></h2>
+          </div>
+          <ul id="list"></ul>
+        </div>
+      </main>
+
+      <div class="modal" id="modal">
+        <div class="modal-content" id="modal-content"></div>
+      </div>
+
+      <div class="modal" id="priceModal">
+        <div class="modal-content" id="price-modal-content ">
+          <div onclick="closePriceModal()" class="rounded-full border-[1px] border-red-500 text-red-500 w-6 h-6 flex item-center justify-center absolute right-4 top-4 " id="priceClose">X</div>
+          <div class="flex flex-wrap justify-around gap-4">
+            <div>
+            <h3 class="text-2xl ">Item 1</h3>
+            <div class="flex">
+              <div>
+                <h3>Quantity:</h3>
+                <h3>Total Price:</h3>
+              </div>
+              <div class="flex-col ml-4">
+                <div>
+                  <input class="w-32 border-2" type="number" />
+                </div>
+                <div>
+                  <input class="w-32 border-2" type="number" />
+                </div>
+              </div>
+            </div></div>
+            <div>
+                  <h3 class="text-2xl ">Item 2</h3>
+                  <div class="flex">
+                    <div>
+                      <h3>Quantity:</h3>
+                      <h3>Total Price:</h3>
+                    </div>
+                    <div class="flex-col ml-4">
+                      <div>
+                        <input class="w-32 border-2" type="number" />
+                      </div>
+          <div>
+                        <input class="w-32 border-2" type="number" />
+                      </div></div></div></div></div>
+        </div>
+      </div>
+
+      
+    </div>
+    <button
+      class="text-xl px-4 py-2 border-2 rounded-full bg-green-600 text-white hover:bg-green-700 fixed bottom-4 left-4"
+      id="compareModalBtn"
+    >
+      compare
+    </button>
+
+    <script src="list.js"></script>
+    <script src="price.js"></script>
+  </body>
+</html>
